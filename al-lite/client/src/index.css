@@ -31,7 +31,7 @@ p {
   position: relative;
   width: 64px;
   height: 64px;
-  top: 20px;
+  top: 100px;
 }
 .lds-spinner div {
   transform-origin: 32px 32px;

@@ -93,6 +93,7 @@ class SearchResultsIndex extends React.Component {
   }
 
   componentWillUnmount() {
+    console.log('bye');
   }
 
 
