@@ -45,7 +45,13 @@ class CarDetail extends React.Component {
 
     fetch(url, myInit)
       .then(res => res.json())
-        .then(res => this.setState({views: res.views}));
+        .then(res => {
+          if (res.status === 200) {
+            this.setState({views: res.car.views});
+          } else {
+            throw res.message;
+          }})
+          .catch(err => console.log(err));
   }
 
   updateViews() {
@@ -63,7 +69,13 @@ class CarDetail extends React.Component {
 
     fetch(url, myInit)
       .then(res => res.json())
-        .then(res => this.setState({views: res.views}));
+        .then(res => {
+          if (res.status === 200) {
+            this.setState({views: res.car.views});
+          } else {
+            throw res.message;
+          }})
+          .catch(err => console.log(err));
   }
 
   handlePhotoChange(dir) {
