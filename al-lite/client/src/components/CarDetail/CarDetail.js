@@ -66,20 +66,18 @@ class CarDetail extends React.Component {
         .then(res => console.log(res));
   }
 
-  handlePhotoChange(e) {
-    e.preventDefault();
-
-    console.log(this.props.location.state);
+  handlePhotoChange(dir) {
 
     const {photo_urls} = this.props.location.state;
 
-    let photoNo;
-    console.log(photo_urls[this.state.photoNo])
+    let photoNo = this.state.photoNo + dir;
 
-    if (this.state.photoNo === photo_urls.length - 1) {
+    if (photoNo === photo_urls.length - 1) {
       photoNo = 0;
-    } else {
-      photoNo = this.state.photoNo + 1;
+    }
+
+    if (photoNo === -1) {
+      photoNo = photo_urls.length - 1;
     }
 
     this.setState({photoNo});

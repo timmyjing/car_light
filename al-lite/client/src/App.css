@@ -244,15 +244,24 @@
 }
 
 .carousel-button {
-  font-size: 30px;
-  color: grey;
-  position: relative;
+  font-size: 6vw;
+  color: white;
+  position: absolute;
   cursor: pointer;
 }
 
 .carousel-container {
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.fa-chevron-right {
+  right: 10px;
+}
+
+.fa-chevron-left {
+  left: 10px;
 }
 
 
