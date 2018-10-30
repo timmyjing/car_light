@@ -15,6 +15,8 @@ On the “Search Results” page, indicate how many times each result has been v
 Server: cd al-lite, bundle install, rails db:setup, rails db:migrate, rails s. Rails server is setup to localhost:3001
 Client: cd client, npm install, npm start. Front end is setup to localhost:3000
 
+NOTE: API key is currently gitignored. Will need to add key into the search results component.
+
 ##Time Spent: Approx 12 Hours
 
 ##Approach and Design Decisions
