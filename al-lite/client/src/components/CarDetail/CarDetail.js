@@ -6,8 +6,10 @@ import Carousel from '../Carousel/Carousel';
 class CarDetail extends React.Component {
   constructor(props) {
     super(props);
+    const {state} = this.props.location;
     this.state = {
-      photoNo: 0
+      photoNo: 0,
+      views: state ? state.views : 0,
     }
 
     this.handlePhotoChange = this.handlePhotoChange.bind(this);
@@ -43,9 +45,7 @@ class CarDetail extends React.Component {
 
     fetch(url, myInit)
       .then(res => res.json())
-        .then(res => console.log(res));
-
-
+        .then(res => this.setState({views: res.views}));
   }
 
   updateViews() {
@@ -63,7 +63,7 @@ class CarDetail extends React.Component {
 
     fetch(url, myInit)
       .then(res => res.json())
-        .then(res => console.log(res));
+        .then(res => this.setState({views: res.views}));
   }
 
   handlePhotoChange(dir) {
@@ -91,9 +91,9 @@ class CarDetail extends React.Component {
     };
 
     const {condition, dealer_name, display_color, make, mileage,
-      photo_urls, price, model, primary_photo_url, city, state, year, vin, views, trim, body_type} = this.props.location.state;
+      photo_urls, price, model, primary_photo_url, city, state, year, vin, trim, body_type} = this.props.location.state;
 
-    const {photoNo} = this.state;
+    const {photoNo, views} = this.state;
   
     return (
       <div className="car-detail-container">
@@ -128,7 +128,7 @@ class CarDetail extends React.Component {
             <p>{vin}</p>
             <p>{condition}</p>
             <p>{dealer_name}</p>
-            <p>{!views ? 1 : views + 1} </p>
+            <p>{views} </p>
           </div>
         </div>
       </div>
