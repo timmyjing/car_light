@@ -17,13 +17,13 @@ const SearchResultsItem = ({listing}) => {
         }}/>
       <div>
         <div className="listing-details">
-          <h3>{year} {make} {model}</h3>
+          <h4>{year} {make} {model}</h4>
           <p>{condition}</p>
           <p><i className="fas fa-eye"></i> Views {!views ? 0 : views}</p>
         </div>
 
         <div className="listing-details">
-          <h3>{price}</h3>
+          <h4>{price}</h4>
           <p>{city}, {state}</p>
         </div>
       </div>

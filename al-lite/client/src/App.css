@@ -7,6 +7,13 @@
   height: 40vmin;
 }
 
+.autolist-logo {
+  background: url('https://web-assets-production.autolist.com/_next/static/images/autolist-logo-red-a03778502514500c4b4623e62e7fca09.png');
+  height: 20.5px;
+  width: 137px;
+  background-size: cover;
+}
+
 .App-header {
   background-color:white;
   /* min-height: 100vh; */
@@ -22,11 +29,11 @@
 }
 
 .App-header > div {
-  margin-left: 100px;
+  margin-left: 150px;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 20px;
   color: red;
-  font-weight: 600;
+  font-weight: 300;
   line-height: 30px;
   letter-spacing: -2.5px;
   font-family: sans-serif;
@@ -160,6 +167,10 @@
   align-items: flex-start;
 }
 
+.listing-details p {
+  margin-top: -10px
+}
+
 .car-detail-container {
   display: flex;
   /* flex-direction: column; */
@@ -204,6 +215,11 @@
   padding: 25px;
 }
 
+.car-detail-data {
+  display: flex;
+  flex-direction: row;
+}
+
 .left-align {
   text-align: left;
 }
@@ -244,7 +260,7 @@
 }
 
 .carousel-button {
-  font-size: 6vw;
+  font-size: 25px;
   color: white;
   position: absolute;
   cursor: pointer;
@@ -256,14 +272,26 @@
   position: relative;
 }
 
-.fa-chevron-right {
+.fa-chevron-circle-right {
   right: 10px;
 }
 
-.fa-chevron-left {
+.fa-chevron-circle-left {
   left: 10px;
 }
 
+.carousel-photo-counter {
+  position: absolute;
+  border: 1px solid black;
+  font-weight: 600;
+  bottom: 0px;
+  right: 0px;
+  margin: 20px;
+  padding: 5px;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border-radius: 5px;
+}
 
 
 

@@ -72,7 +72,7 @@ class CarDetail extends React.Component {
 
     let photoNo = this.state.photoNo + dir;
 
-    if (photoNo === photo_urls.length - 1) {
+    if (photoNo === photo_urls.length) {
       photoNo = 0;
     }
 
@@ -91,20 +91,14 @@ class CarDetail extends React.Component {
     };
 
     const {condition, dealer_name, display_color, make, mileage,
-      photo_urls, price, model, primary_photo_url, city, state, year, vin, views} = this.props.location.state;
+      photo_urls, price, model, primary_photo_url, city, state, year, vin, views, trim, body_type} = this.props.location.state;
 
     const {photoNo} = this.state;
   
     return (
       <div className="car-detail-container">
         <div className="car-detail-card">
-          {/* <div style={{background: `url(${photo_urls[photoNo]})`}}
-            onClick={this.handlePhotoChange}>
-          </div> */}
-          {/* <img src={photo_urls[photoNo]} alt={`${make} ${model} VIN ${vin}`} 
-            onError={(e) => {e.target.src = primary_photo_url;}}
-            onClick={this.handlePhotoChange} /> */}
-          <Carousel photo={photo_urls[photoNo]} handlePhotoChange={this.handlePhotoChange} primary_photo_url={primary_photo_url} />
+          <Carousel photoUrls={photo_urls} photoNo={photoNo} handlePhotoChange={this.handlePhotoChange} primary_photo_url={primary_photo_url} />
           <div className="car-detail-info">
             <div className="left-align">
               <h4>{year} {make} {model}</h4>
@@ -113,13 +107,14 @@ class CarDetail extends React.Component {
 
             <div className="right-align">
               <h4>{price}</h4>
-              {/* <h4>{city}, {state} </h4> */}
             </div>
           </div>
         </div>
         <div className="car-detail-info">
           <div className="left-align">
+            <p>Trim</p>
             <p>Color</p>
+            <p>Body Type</p>
             <p>VIN</p>
             <p>Condition</p>
             <p>Dealer</p>
@@ -127,7 +122,9 @@ class CarDetail extends React.Component {
           </div>
 
           <div className="right-align">
+            <p>{trim}</p>
             <p>{display_color ? display_color : 'N/A'}</p>
+            <p>{body_type}</p>
             <p>{vin}</p>
             <p>{condition}</p>
             <p>{dealer_name}</p>

@@ -16,8 +16,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          {pathname.indexOf('car') !== -1 ? <div onClick={ () => this.props.history.goBack()}>{'<'} Back to Search</div> : <div onClick={ () => this.props.history.push('/')}>Autolist Lite</div>}
+          {pathname.indexOf('car') !== -1 ? <div onClick={ () => this.props.history.goBack()}><i className="fas fa-chevron-left"></i> Back to Search</div> : 
+          <div onClick={ () => this.props.history.push('/')} className="autolist-logo"></div>}
         </header>
         <Route exact={true} path="/" component={HomePage} />
         <Route path="/listings" component={SearchResultsIndex} />
