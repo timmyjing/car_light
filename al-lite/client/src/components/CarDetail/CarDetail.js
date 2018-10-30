@@ -15,6 +15,7 @@ class CarDetail extends React.Component {
     this.handlePhotoChange = this.handlePhotoChange.bind(this);
     this.updateViews = this.updateViews.bind(this);
     this.createViews = this.createViews.bind(this);
+    this.fetchData = this.fetchData.bind(this);
   }
 
   componentDidMount() {
@@ -28,6 +29,18 @@ class CarDetail extends React.Component {
     } else {
       this.createViews();
     }
+  }
+
+  fetchData(url, init) {
+    fetch(url, init)
+    .then(res => {
+      if (res.status === 200) {
+        return res.json();
+      } else {
+        throw new Error("Error occurred")
+      }})
+      .then(res => this.setState({views: res.views}))
+      .catch(err => console.log(err));
   }
   
   createViews() {
@@ -43,15 +56,7 @@ class CarDetail extends React.Component {
       mode: 'cors',
       cache: 'default'};
 
-    fetch(url, myInit)
-      .then(res => res.json())
-        .then(res => {
-          if (res.status === 200) {
-            this.setState({views: res.car.views});
-          } else {
-            throw res.message;
-          }})
-          .catch(err => console.log(err));
+    this.fetchData(url, myInit);
   }
 
   updateViews() {
@@ -67,15 +72,7 @@ class CarDetail extends React.Component {
       mode: 'cors',
       cache: 'default'};
 
-    fetch(url, myInit)
-      .then(res => res.json())
-        .then(res => {
-          if (res.status === 200) {
-            this.setState({views: res.car.views});
-          } else {
-            throw res.message;
-          }})
-          .catch(err => console.log(err));
+    this.fetchData(url, myInit);    
   }
 
   handlePhotoChange(dir) {

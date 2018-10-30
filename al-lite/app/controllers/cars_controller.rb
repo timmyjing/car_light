@@ -8,9 +8,9 @@ class CarsController < ActionController::API
   def create
     car = Car.new(vin: params[:vin], views: 1)
     if car.save
-      render json: {car: car, status: 200}
+      render json: car, status: 200
     else
-      render json: {message: car.errors.full_messages, status: 422}
+      render json: car.errors.full_messages, status: 422
     end
   end
 
@@ -19,12 +19,12 @@ class CarsController < ActionController::API
     if car
       car.increment_views
       if car.save
-        render json: {car: car, status: 200}
+        render json: car, status: 200
       else
-        render json: {message: car.errors.full_messages, status: 404}
+        render json: car.errors.full_messages, status: 404
       end
     else
-      render json: {message: 'Car not found', status: 422}
+      render json: 'Car not found', status: 422
     end
   end
 
