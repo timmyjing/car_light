@@ -18,13 +18,13 @@ const SearchResultsItem = ({listing}) => {
       <div>
         <div className="listing-details">
           <h4>{year} {make} {model}</h4>
-          <p>{condition}</p>
-          <p><i className="fas fa-eye"></i> Views {!views ? 0 : views}</p>
+          <p className="listing-subtext">{mileage} | {condition}</p>
+          <p>{city}, {state}</p>
         </div>
 
         <div className="listing-details">
           <h4>{price}</h4>
-          <p>{city}, {state}</p>
+          <p className="listing-subtext"><i className="fas fa-eye"></i> Views {!views ? 0 : views}</p>
         </div>
       </div>
     </Link>);

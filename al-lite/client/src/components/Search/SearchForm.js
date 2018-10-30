@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter, Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 
 class SearchForm extends React.Component {
@@ -48,10 +48,10 @@ class SearchForm extends React.Component {
 
   render() {
     const {minPrice, maxPrice} = this.state;
-    console.log(this.props.history);
+    const style = this.props.style;
 
     return (
-      <form className="search-filters">
+      <form className="search-filters" style={style}>
         <h2>Search by Price</h2>
         <h3>Min Price ($)</h3>
         <input type="number" className="price-filter" onChange={e => this.handleInput(e, "min")} value={this.state.minPrice} min="0" max="100000" />

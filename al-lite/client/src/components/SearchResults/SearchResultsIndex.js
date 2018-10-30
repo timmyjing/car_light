@@ -93,7 +93,6 @@ class SearchResultsIndex extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log('bye');
   }
 
 
@@ -117,11 +116,11 @@ class SearchResultsIndex extends React.Component {
 
     if (!currPage) return null;
 
-    let nextPages = [-1, 0, 1, 2];
+    let nextPages = [-1, 0, 1];
     if (currPage === 1) {
-      nextPages = [0, 1, 2];
+      nextPages = [0, 1, 2, 3];
     } else if (currPage === 249) {
-      nextPages = [-2,-1,0];
+      nextPages = [-3,-2,-1,0];
     }
 
     nextPages = nextPages.map( page => page + currPage);
@@ -151,7 +150,7 @@ class SearchResultsIndex extends React.Component {
 
     return (
       <div className="search-results-container">
-        <SearchForm />
+        <SearchForm style={{backgroundColor: 'white', color: 'black', textShadow: 'none'}}/>
         <div className="listings-container">
           {this.state.loading ? null : <p>{numResults} Results Found</p>}
           {this.state.loading ? <LoadingSpinner /> : listings}

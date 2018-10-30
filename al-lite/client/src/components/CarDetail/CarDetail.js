@@ -102,7 +102,7 @@ class CarDetail extends React.Component {
           <div className="car-detail-info">
             <div className="left-align">
               <h4>{year} {make} {model}</h4>
-              <h4>{mileage} | {city}, {state}</h4>
+              <p className="detail-subtext">{mileage} | {city}, {state}</p>
             </div>
 
             <div className="right-align">
