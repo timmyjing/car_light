@@ -1,6 +1,6 @@
 [LIVE SITE](https://shielded-eyrie-78915.herokuapp.com/#/)
 
-##Requirements
+## Requirements
 Use the latest version of your chosen framework, and any database to back it.
 For the front end, use any Javascript framework you wish (or vanilla JS if you want)
 Create three pages: a “Home” page, a “Search Results” page and a “Vehicle Details” page.
@@ -11,15 +11,15 @@ Clicking a vehicle search result should open a basic “Vehicle Details” page,
 In the database, keep track of how many times each result (by VIN) is shown on the “Vehicle Details” page. Treat VIN as a unique identifier for vehicles.
 On the “Search Results” page, indicate how many times each result has been viewed on the “Vehicle Details” page. For example each result on the  “Search Results” page could have a text area saying “Viewed X times”
 
-##Setup
+## Setup
 Server: cd al-lite, bundle install, rails db:setup, rails db:migrate, rails s. Rails server is setup to localhost:3001
 Client: cd client, npm install, npm start. Front end is setup to localhost:3000
 
 NOTE: API key is currently gitignored. Will need to add key into the search results component.
 
-##Time Spent: Approx 12 Hours
+## Time Spent: Approx 12 Hours
 
-##Approach and Design Decisions
+## Approach and Design Decisions
 I built this project using a React front end and a Ruby on Rails as an API backend with a Postgres database. The decisions made
 were based on the API supplied. Since the API only returned paginated results with all the car data needed, I decided to use
 a unidirectional data flow and just have down the car data as props to a component that links to the car detail component. This was 
