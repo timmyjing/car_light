@@ -4,7 +4,8 @@ import SearchResultsItem from './SearchResultsItem';
 import {Link} from 'react-router-dom';
 import SearchForm from '../Search/SearchForm';
 import LoadingSpinner from '../UI/SpinninRims';
-import {API_KEY} from '../../config/keys.js';
+// import {API_KEY} from '../../config/keys.js';
+const API_KEY = 'cPvW4cvlX73o7WeloOBzeWfvrb4Kl12uw0olDp90';
 
 class SearchResultsIndex extends React.Component {
   constructor(props) {
@@ -54,7 +55,7 @@ class SearchResultsIndex extends React.Component {
 
     const vins = data.records.map( e => e.vin);
     
-    let url = `http://localhost:3001/cars/?`;
+    let url = `/cars/?`;
 
     const myInit = {
       method: 'GET', 

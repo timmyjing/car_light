@@ -46,13 +46,14 @@ class CarDetail extends React.Component {
   createViews() {
     const {vin} = this.props.location.state;
 
-    const url = `http://localhost:3001/cars/?vin=${vin}`;
+    const url = `/cars/?vin=${vin}`;
 
     const myInit = {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': `http://localhost:3001`},
+        // 'Access-Control-Allow-Origin': `http://localhost:3001`
+      },
       mode: 'cors',
       cache: 'default'};
 
@@ -62,13 +63,14 @@ class CarDetail extends React.Component {
   updateViews() {
     const {vin} = this.props.location.state;
 
-    const url = `http://localhost:3001/cars/${vin}`;
+    const url = `/cars/${vin}`;
 
     const myInit = {
       method: 'PUT', 
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': `http://localhost:3001`},
+        // 'Access-Control-Allow-Origin': `http://localhost:3001`
+      },
       mode: 'cors',
       cache: 'default'};
 
